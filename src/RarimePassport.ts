@@ -209,11 +209,11 @@ export class RarimePassport {
 
     if (
       proposalInfo.criteria.sex !== 0n &&
-      proposalInfo.criteria.sex !== BigInt(mrz.sex)
+      proposalInfo.criteria.sex !== BigInt(mrz.sex.charCodeAt(0))
     ) {
       throw new Error(
         `Sex mismatch, expected ${proposalInfo.criteria.sex}, received ${BigInt(
-          mrz.sex
+          mrz.sex.charCodeAt(0)
         )}`
       );
     }
